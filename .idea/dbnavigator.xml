@@ -45,7 +45,7 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/schema.sql" connection-id="a1eb7115-1e1a-4ef3-bec6-b203208f0f19" session-id="MAIN" current-schema="app" />
+    <mapping file-url="file://$PROJECT_DIR$/db/schema.sql" connection-id="a1eb7115-1e1a-4ef3-bec6-b203208f0f19" session-id="MAIN" current-schema="app" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -67,7 +67,7 @@
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
     <recently-used-interfaces>
-      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+      <mapping database-type="MYSQL" interface-id="818e3ff7-a46f-4b22-b93b-73de6c73425e" />
     </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
@@ -473,7 +473,9 @@
         <prompt-execution value="false" />
       </statement-execution>
       <script-execution>
-        <command-line-interfaces />
+        <command-line-interfaces>
+          <value id="818e3ff7-a46f-4b22-b93b-73de6c73425e" name="MySQL client" executable-path="$PROJECT_DIR$/db/schema.sql" database-type="MYSQL" />
+        </command-line-interfaces>
         <execution-timeout value="300" />
       </script-execution>
       <method-execution>
