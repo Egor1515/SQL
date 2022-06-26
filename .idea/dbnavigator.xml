@@ -28,15 +28,15 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="e5ead131-16d8-4299-899b-1e359b20091f">
-      <console name="Connection" type="STANDARD" schema="app" session="Main" />
+    <connection id="35e6f5be-faa4-460e-9e00-9e53bdb1f06a">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="e5ead131-16d8-4299-899b-1e359b20091f" />
+    <connection id="35e6f5be-faa4-460e-9e00-9e53bdb1f06a" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -67,7 +67,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="e5ead131-16d8-4299-899b-1e359b20091f" active="true" signed="true">
+      <connection id="35e6f5be-faa4-460e-9e00-9e53bdb1f06a" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -83,7 +83,7 @@
           <database value="app" />
           <type value="USER_PASSWORD" />
           <user value="app" />
-          <deprecated-pwd value="OW1SRXN2WERzOUdrODlFZg==" />
+          <deprecated-pwd value="cXdlcXdl" />
         </database>
         <properties>
           <auto-commit value="false" />
