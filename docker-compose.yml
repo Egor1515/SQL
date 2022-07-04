@@ -2,7 +2,7 @@ version: '3.7'
 services:
   mysql:
     platform: linux/x86_64
-    image: mysql:8.0
+    image: mysql:latest
     ports:
       - '3306:3306'
     volumes:
@@ -11,4 +11,4 @@ services:
       - MYSQL_RANDOM_ROOT_PASSWORD=yes
       - MYSQL_DATABASE=app
       - MYSQL_USER=app
-      - MYSQL_PASSWORD=9mREsvXDs9Gk89Ef
+      - MYSQL_PASSWORD=pass
