@@ -12,5 +12,7 @@ public class DataBaseConnections {
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             System.out.println("We're connected");
         }
+
+
     }
 }
