@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import db.DataBaseConnections;
 import org.junit.jupiter.api.Test;
 import page.LoginPage;
@@ -17,7 +19,8 @@ public class DataBaseConnectionsTest {
 
     @Test
     void shouldAuthWithUser() {
-        LoginPage page = open("http://localhost:9999",LoginPage.class);
+        Configuration.holdBrowserOpen = true;
+        LoginPage page = open("http://localhost:9999", LoginPage.class);
         page.authWithUser();
     }
 }
