@@ -1,8 +1,8 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import db.DataBaseConnections;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import page.LoginPage;
 import page.VerificationPage;
@@ -19,10 +19,15 @@ public class DataBaseConnectionsTest {
     }
 
     @Test
-    void shouldAuthWithUser() {
+    void shouldAuthWithUser() throws SQLException, ClassNotFoundException {
         Configuration.holdBrowserOpen = true;
         LoginPage page = open("http://localhost:9999", LoginPage.class);
         page.authWithUser();
         VerificationPage.sendVerificationCode();
+
+    }
+    @AfterAll
+    static void shouldDropTables() throws SQLException, ClassNotFoundException {
+        DataBaseConnections.shouldDropTables();
     }
 }
