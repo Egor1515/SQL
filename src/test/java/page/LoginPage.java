@@ -18,5 +18,4 @@ public class LoginPage {
         passField.setValue(DataHelper.getAuthInfo().getPass());
         buttonNext.click();
     }
-
 }

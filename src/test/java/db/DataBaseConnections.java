@@ -3,6 +3,7 @@ package db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class DataBaseConnections {
@@ -12,8 +13,10 @@ public class DataBaseConnections {
         String password = "9mREsvXDs9Gk89Ef";
         Class.forName("com.mysql.jdbc.Driver");
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
-            System.out.println("We're connected");
+            Statement statement = connection.createStatement();
+            statement.execute("insert into");
         }
+
 
 
     }

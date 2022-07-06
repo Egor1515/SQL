@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 import db.DataBaseConnections;
 import org.junit.jupiter.api.Test;
 import page.LoginPage;
+import page.VerificationPage;
 
 import java.sql.SQLException;
 
@@ -22,5 +23,6 @@ public class DataBaseConnectionsTest {
         Configuration.holdBrowserOpen = true;
         LoginPage page = open("http://localhost:9999", LoginPage.class);
         page.authWithUser();
+        VerificationPage.sendVerificationCode();
     }
 }
