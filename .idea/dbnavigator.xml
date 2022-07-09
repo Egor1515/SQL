@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de">
-      <console name="Connection" type="STANDARD" schema="app" session="Main" />
+      <console name="Connection" type="STANDARD" schema="app" session="Main"><![CDATA[select * from auth_codes;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -38,11 +38,18 @@
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de" />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" dataset="app.auth_codes" active-filter-id="" />
+    <filter-actions connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" dataset="app.users" active-filter-id="" />
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.FileConnectionMappingManager">
+    <mapping file-url="file://$PROJECT_DIR$/db/schema.sql" connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" session-id="MAIN" current-schema="app" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />

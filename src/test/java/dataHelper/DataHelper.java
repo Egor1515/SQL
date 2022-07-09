@@ -30,7 +30,7 @@ public class DataHelper {
     }
 
     public static VerificationCode getVerificationCode() {
-        return new VerificationCode("12345");
+        return new VerificationCode("218802");
     }
 
 }
