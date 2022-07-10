@@ -1,5 +1,6 @@
 package dataHelper;
 
+import db.DataBaseConnections;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,8 @@ public class DataHelper {
     }
 
     public static VerificationCode getVerificationCode() {
-        return new VerificationCode("218802");
+        String code = DataBaseConnections.shouldSendCode();
+        return new VerificationCode(code);
     }
 
 }
