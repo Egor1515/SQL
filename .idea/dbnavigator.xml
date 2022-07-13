@@ -17,8 +17,8 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="UTF-8" />
-      <charset value="UTF-8" />
+      <charset value="windows-1251" />
+      <charset value="windows-1251" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de">
-      <console name="Connection" type="STANDARD" schema="app" session="Main"><![CDATA[SELECT `code` FROM `auth_codes` LIMIT 1 ORDER BY `code` DESC]]></console>
+      <console name="Connection" type="STANDARD" schema="app" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

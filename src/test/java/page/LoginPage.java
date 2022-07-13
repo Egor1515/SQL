@@ -12,9 +12,9 @@ public class LoginPage {
     private final SelenideElement buttonNext = $("[data-test-id='action-login']");
 
     public void authWithUser() {
-        var info = new DataHelper.RegisteredAuthInfo();
-        loginField.setValue(info.getUser());
-        passField.setValue(info.getPass());
+        var registeredUser = new DataHelper().getUser();
+        loginField.setValue(registeredUser.getUser());
+        passField.setValue(registeredUser.getPass());
         buttonNext.click();
     }
 }
