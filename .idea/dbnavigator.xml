@@ -28,7 +28,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de">
+    <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc">
       <console name="Connection" type="STANDARD" schema="app" session="Main" />
     </connection>
   </component>
@@ -36,11 +36,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de" />
-  </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" dataset="app.auth_codes" active-filter-id="" />
-    <filter-actions connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" dataset="app.users" active-filter-id="" />
+    <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -74,7 +70,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de" active="true" signed="true">
+      <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
