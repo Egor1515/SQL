@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1fa66deb-beba-4d7b-8180-d671d7cc94de">
-      <console name="Connection" type="STANDARD" schema="app" session="Main"><![CDATA[select * from auth_codes;]]></console>
+      <console name="Connection" type="STANDARD" schema="app" session="Main"><![CDATA[SELECT `code` FROM `auth_codes` LIMIT 1 ORDER BY `code` DESC]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

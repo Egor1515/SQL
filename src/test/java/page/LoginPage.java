@@ -10,12 +10,11 @@ public class LoginPage {
     private final SelenideElement loginField = $("[data-test-id='login'] input");
     private final SelenideElement passField = $("[data-test-id='password'] input");
     private final SelenideElement buttonNext = $("[data-test-id='action-login']");
-    private final SelenideElement heading = $("paragraph paragraph_theme_alfa-on-white");
 
     public void authWithUser() {
-//        heading.shouldHave(Condition.text("Мы гарантируем безопасность ваших данных"));
-        loginField.setValue(DataHelper.getAuthInfo().getUser());
-        passField.setValue(DataHelper.getAuthInfo().getPass());
+        var info = new DataHelper.RegisteredAuthInfo();
+        loginField.setValue(info.getUser());
+        passField.setValue(info.getPass());
         buttonNext.click();
     }
 }

@@ -1,9 +1,7 @@
 package dataHelper;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Value;
+import db.DataBaseConnections;
+import lombok.*;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,22 +13,33 @@ public class DataHelper {
     public static class AuthInfo {
         String user;
         String pass;
-
     }
 
-    @Contract(" -> new")
-    public static @NotNull
-    AuthInfo getAuthInfo() {
-        return new AuthInfo("vasya", "qwerty123");
+    public DataHelper() {
     }
 
-    @Value
+    @Data
+    @Getter
+    @Setter
+    public static class RegisteredAuthInfo {
+        String user = "vasya";
+        String password = "qwerty123";
+
+        public static AuthInfo getAuthInfo() {
+            RegisteredAuthInfo info = new RegisteredAuthInfo();
+            return new AuthInfo(info.user,info.password ); //TODO ДОПИСАТЬ МЕТОДЫ ДЛЯ ПОЛЕЧЕНИЯ ЗАРЕГИСТРИРОВАННЫХ ПОЛЬЗОВАТЕЛЕЙУ
+        }
+
+    }
+    @Data
+    @Getter
+    @Setter
     public static class VerificationCode {
         String code;
-    }
 
-    public static VerificationCode getVerificationCode() {
-        return new VerificationCode("218802");
+        public int getLastGeneratedCode() {
+            return DataBaseConnections.shouldSendCode();
+        }
     }
 
 }
