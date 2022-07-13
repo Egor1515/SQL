@@ -1,7 +1,14 @@
 package dataHelper;
 
 import db.DataBaseConnections;
+<<<<<<< HEAD
 import lombok.*;
+=======
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Value;
+>>>>>>> 4c7aecdc57cf7c50aa3bba8ff892fc50c665b5ab
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,9 +44,15 @@ public class DataHelper {
     public static class VerificationCode {
         String code;
 
+<<<<<<< HEAD
         public int getLastGeneratedCode() {
             return DataBaseConnections.shouldSendCode();
         }
+=======
+    public static VerificationCode getVerificationCode() {
+        String code = DataBaseConnections.shouldSendCode();
+        return new VerificationCode(code);
+>>>>>>> 4c7aecdc57cf7c50aa3bba8ff892fc50c665b5ab
     }
 
 }
