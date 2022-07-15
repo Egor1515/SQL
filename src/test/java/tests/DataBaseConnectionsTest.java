@@ -12,11 +12,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class DataBaseConnectionsTest {
     VerificationPage page = new VerificationPage();
     DashboardPage dash = new DashboardPage();
-
-
-    @Test
+        @Test
     void shouldConnectMysql() {
-        DataBaseConnections.mysql();
+        DataBaseConnections.dbConnect();
     }
 
     @Test
@@ -30,7 +28,7 @@ public class DataBaseConnectionsTest {
 
     @Test
     public void should() {
-        DataBaseConnections.shouldSendCode();
+        DataBaseConnections.getLastGeneratedCode();
     }
 
     @Test
@@ -38,5 +36,9 @@ public class DataBaseConnectionsTest {
         DataBaseConnections.shouldClearTables();
 
     }
+    @Test
 
+    void shouldReturnFirstCode()  {
+        DataBaseConnections.getLastGeneratedCode();
+    }
 }

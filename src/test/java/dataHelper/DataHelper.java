@@ -7,7 +7,7 @@ public class DataHelper {
 
     @Value
 
-    public class AuthInfo {
+    public static class AuthInfo {
         String user;
         String pass;
 
@@ -29,13 +29,7 @@ public class DataHelper {
     @Value
 
     public static class VerificationCode {
-        String code;
-
-        public static String getLastGeneratedCode() {
-
-            return DataBaseConnections.shouldSendCode();
-        }
-
+        int code;
 
     }
 

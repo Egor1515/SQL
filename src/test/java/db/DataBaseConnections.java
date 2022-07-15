@@ -4,7 +4,7 @@ import java.sql.*;
 
 
 public class DataBaseConnections {
-    public static void mysql() {
+    public static void dbConnect() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -12,7 +12,7 @@ public class DataBaseConnections {
 
             System.out.println("We're connected SQL");
         } catch (SQLException sql) {
-            System.out.println("SQL exception");
+            System.out.println("DB exception");
         }
     }
 
@@ -24,37 +24,33 @@ public class DataBaseConnections {
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             Statement statement = connection.createStatement();
 
-            statement.executeUpdate("drop table auth_codes");
-            statement.executeUpdate("drop table card_transactions");
-            statement.executeUpdate("drop table cards");
-            statement.executeUpdate("drop table users");
-        }
-        catch (SQLException exception){
+            statement.executeUpdate("delete from auth_codes");
+            statement.executeUpdate("delete from card_transactions");
+            statement.executeUpdate("delete from cards");
+            statement.executeUpdate("delete from users");
+        } catch (SQLException exception) {
             System.out.println("SQL exception");
         }
     }
 
-    public static String shouldSendCode() {
+    public static CharSequence getLastGeneratedCode ()  {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
-        String  code = null;
+        int code=0;
 
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT `code` FROM `auth_codes` LIMIT 1 ORDER BY `code` DESC");
+            ResultSet resultSet = statement.executeQuery("SELECT MAX(`code`) FROM auth_codes");
             while (resultSet.next()) {
-                code = resultSet.getString("code");
+                code = resultSet.getInt(1);
+                System.out.println(code); // Добавил для себя, чтобы разобраться получше, т.к. хоть метод и работает, но он не правильный по всей видимости.
             }
-
-        } catch (SQLException ex) {
-
-            System.out.println("SQLException");
-
-
-
         }
-        return code;
+        catch (SQLException exception) {
+            System.out.println("SQL exception");
+        }
+        return null;
     }
 
 }

@@ -28,15 +28,15 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc">
-      <console name="Connection" type="STANDARD" schema="app" session="Main" />
+    <connection id="7bcae75e-12ce-471e-802d-46e58a34ccc9">
+      <console name="Connection" type="STANDARD" schema="app" session="Main"><![CDATA[SELECT MAX(`code`) FROM auth_codes]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc" />
+    <connection id="7bcae75e-12ce-471e-802d-46e58a34ccc9" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -45,7 +45,7 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/db/schema.sql" connection-id="1fa66deb-beba-4d7b-8180-d671d7cc94de" session-id="MAIN" current-schema="app" />
+    <mapping file-url="file://$PROJECT_DIR$/db/schema.sql" connection-id="8a08bc61-238e-49e8-8484-d4b8f8d729fc" session-id="MAIN" current-schema="app" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -70,7 +70,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="8a08bc61-238e-49e8-8484-d4b8f8d729fc" active="true" signed="true">
+      <connection id="7bcae75e-12ce-471e-802d-46e58a34ccc9" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
