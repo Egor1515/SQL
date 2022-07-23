@@ -11,9 +11,9 @@ public class LoginPage {
     private final SelenideElement passField = $("[data-test-id='password'] input");
     private final SelenideElement buttonNext = $("[data-test-id='action-login']");
 
-    public void authWithUser() {
+    public void authWithUser(String name) {
         var registeredUser = new DataHelper().getUser();
-        loginField.setValue(registeredUser.getUser());
+        loginField.setValue(name);
         passField.setValue(registeredUser.getPass());
         buttonNext.click();
     }

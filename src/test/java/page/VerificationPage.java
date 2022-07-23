@@ -12,8 +12,10 @@ public class VerificationPage {
     private final SelenideElement buttonNext = $("[data-test-id='action-verify']");
 
 
-    public void sendVerificationCode() {
-        codeField.val(DataBaseConnections.getLastGeneratedCode());
+    public void sendVerificationCode(String code) {
+        var db= new DataBaseConnections();
+        codeField.val(db.getLastGeneratedCode());
         buttonNext.click();
+
     }
 }
