@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import dataHelper.DataHelper;
 import db.DataBaseConnections;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,12 +19,12 @@ public class DataBaseConnectionsTest {
     @Test
     void shouldAuthWithUser() {
         Configuration.holdBrowserOpen = true;
-        var code = new DataBaseConnections();
+
         LoginPage login = open("http://localhost:9999", LoginPage.class);
         VerificationPage page = new VerificationPage();
         DashboardPage dash = new DashboardPage();
-        login.authWithUser(code.getLastGeneratedName());
-        page.sendVerificationCode(code.getLastGeneratedCode());
+        login.authWithUser(DataBaseConnections.getLastGeneratedName(), DataHelper.getRegisteredPassword());
+        page.sendVerificationCode(DataBaseConnections.getLastGeneratedCode());
         dash.shouldBeVisible();
     }
 
@@ -37,9 +38,9 @@ public class DataBaseConnectionsTest {
     @Test
     void shouldGetStatus() {
 
-        var code = new DataBaseConnections();
-        code.dbConnect();
-        String expected = code.getStatus();
+
+        DataBaseConnections.dbConnect();
+        String expected = DataBaseConnections.getStatus();
         String actual = "active";
         assertEquals(expected, actual);
     }

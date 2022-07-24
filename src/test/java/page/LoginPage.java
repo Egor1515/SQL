@@ -11,10 +11,10 @@ public class LoginPage {
     private final SelenideElement passField = $("[data-test-id='password'] input");
     private final SelenideElement buttonNext = $("[data-test-id='action-login']");
 
-    public void authWithUser(String name) {
-        var registeredUser = new DataHelper().getUser();
+    public void authWithUser(String name,String pass) {
+
         loginField.setValue(name);
-        passField.setValue(registeredUser.getPass());
+        passField.setValue(pass);
         buttonNext.click();
     }
 }

@@ -1,23 +1,27 @@
 package db;
 
+import lombok.experimental.UtilityClass;
+
 import java.sql.*;
 
-
+@UtilityClass
 public class DataBaseConnections {
-    public void dbConnect() {
+    public Connection dbConnect() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
-
-            System.out.println("We're connected SQL");
+            return connection;
         } catch (SQLException ex) {
-           ex.printStackTrace();
+            ex.printStackTrace();
+
         }
+
+        return null;
     }
 
 
-    public  String getLastGeneratedCode () {
+    public String getLastGeneratedCode() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -36,7 +40,7 @@ public class DataBaseConnections {
         return code;
     }
 
-    public  String getLastGeneratedName () {
+    public String getLastGeneratedName() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -55,7 +59,8 @@ public class DataBaseConnections {
         }
         return login;
     }
-    public  String getStatus () {
+
+    public String getStatus() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";

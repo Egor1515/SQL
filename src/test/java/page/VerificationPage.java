@@ -1,8 +1,6 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.commands.ToString;
-import dataHelper.DataHelper;
 import db.DataBaseConnections;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -13,8 +11,8 @@ public class VerificationPage {
 
 
     public void sendVerificationCode(String code) {
-        var db= new DataBaseConnections();
-        codeField.val(db.getLastGeneratedCode());
+
+        codeField.val(DataBaseConnections.getLastGeneratedCode());
         buttonNext.click();
 
     }

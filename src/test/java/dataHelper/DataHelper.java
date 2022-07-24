@@ -1,8 +1,9 @@
 package dataHelper;
 
-import db.DataBaseConnections;
-import lombok.*;
+import lombok.Value;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class DataHelper {
 
     @Value
