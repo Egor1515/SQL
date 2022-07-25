@@ -1,7 +1,6 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
-import db.DataBaseConnections;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -10,10 +9,10 @@ public class VerificationPage {
     private final SelenideElement buttonNext = $("[data-test-id='action-verify']");
 
 
-    public void sendVerificationCode(String code) {
-
-        codeField.val(DataBaseConnections.getLastGeneratedCode());
+    public DashboardPage sendVerificationCode(String code) {
+        codeField.val(code);
         buttonNext.click();
+        return new DashboardPage();
 
     }
 }

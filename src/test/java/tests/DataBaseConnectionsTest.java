@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.mysql.cj.log.Log;
 import dataHelper.DataHelper;
 import db.DataBaseConnections;
 import org.junit.jupiter.api.AfterAll;
@@ -19,12 +20,13 @@ public class DataBaseConnectionsTest {
     @Test
     void shouldAuthWithUser() {
         Configuration.holdBrowserOpen = true;
-
         LoginPage login = open("http://localhost:9999", LoginPage.class);
+        var verificationPage = login.authWithUser(DataHelper.getUser());
+        var dashboardPage = verificationPage.sendVerificationCode(DataBaseConnections.getLastGeneratedCode());
         VerificationPage page = new VerificationPage();
         DashboardPage dash = new DashboardPage();
-        login.authWithUser(DataBaseConnections.getLastGeneratedName(), DataHelper.getRegisteredPassword());
-        page.sendVerificationCode(DataBaseConnections.getLastGeneratedCode());
+//        login.authWithUser(verificationPage);  //TODO Не совсем понял, что мы делаем, когда объявляем два объекта verificationPage и dashboardPage
+//        page.sendVerificationCode(dashboardPage);
         dash.shouldBeVisible();
     }
 
@@ -44,7 +46,8 @@ public class DataBaseConnectionsTest {
         assertEquals(expected, actual);
     }
     @Test
-    void should() throws SQLException{
+
+    void should() throws SQLException {
         DataBaseConnections.dbConnect();
     }
 }
