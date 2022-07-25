@@ -6,18 +6,13 @@ import java.sql.*;
 
 @UtilityClass
 public class DataBaseConnections {
-    public Connection dbConnect() {
+    public Connection dbConnect() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             return connection;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-
         }
-
-        return null;
     }
 
 
