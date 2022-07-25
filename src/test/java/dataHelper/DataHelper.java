@@ -8,21 +8,21 @@ public class DataHelper {
 
     @Value
 
-    public static class AuthInfo {
+    private static class AuthInfo {
         String user;
         String pass;
 
     }
 
-    public AuthInfo getUser() {
+    public static AuthInfo getUser() {
         return new AuthInfo(getRegisteredUser(), getRegisteredPassword());
     }
 
-    public String getRegisteredUser() {
+    public static String getRegisteredUser() {
         return "vasya";
     }
 
-    public String getRegisteredPassword() {
+    public static String getRegisteredPassword() {
         return "qwerty123";
     }
 

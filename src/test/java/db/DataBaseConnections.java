@@ -6,7 +6,7 @@ import java.sql.*;
 
 @UtilityClass
 public class DataBaseConnections {
-    public Connection dbConnect() {
+    public static Connection dbConnect() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -21,7 +21,7 @@ public class DataBaseConnections {
     }
 
 
-    public String getLastGeneratedCode() {
+    public static String getLastGeneratedCode() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -29,7 +29,7 @@ public class DataBaseConnections {
         String code = null;
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT code FROM auth_codes");
+            ResultSet resultSet = statement.executeQuery("SELECT code FROM auth_codes LIMIT 1");
             while (resultSet.next()) {
                 code = (resultSet.getString("code"));
 
@@ -40,7 +40,7 @@ public class DataBaseConnections {
         return code;
     }
 
-    public String getLastGeneratedName() {
+    public static String getLastGeneratedName() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";
@@ -49,7 +49,7 @@ public class DataBaseConnections {
         String login = null;
         try (Connection connection = DriverManager.getConnection(url, userName, password)) {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT login FROM users");
+            ResultSet resultSet = statement.executeQuery("SELECT login FROM users ");
             while (resultSet.next()) {
                 login = (resultSet.getString("login"));
 
@@ -60,7 +60,7 @@ public class DataBaseConnections {
         return login;
     }
 
-    public String getStatus() {
+    public static    String getStatus() {
         String url = "jdbc:mysql://localhost:3306/app";
         String userName = "app";
         String password = "pass";

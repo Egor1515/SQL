@@ -23,7 +23,7 @@ public class DataBaseConnectionsTest {
         LoginPage login = open("http://localhost:9999", LoginPage.class);
         VerificationPage page = new VerificationPage();
         DashboardPage dash = new DashboardPage();
-        login.authWithUser(DataBaseConnections.getLastGeneratedName(), DataHelper.getRegisteredPassword());
+        login.authWithUser(DataHelper.getRegisteredUser(), DataHelper.getRegisteredPassword());
         page.sendVerificationCode(DataBaseConnections.getLastGeneratedCode());
         dash.shouldBeVisible();
     }
@@ -43,5 +43,11 @@ public class DataBaseConnectionsTest {
         String expected = DataBaseConnections.getStatus();
         String actual = "active";
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void should() {
+        DataBaseConnections.shouldClearTables();
+
     }
 }
